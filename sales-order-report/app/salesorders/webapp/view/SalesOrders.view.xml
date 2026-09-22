@@ -1,0 +1,34 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="sales-order-report.salesorders.controller.SalesOrders"
+  displayBlock="true"
+  height="100%">
+<Page title="Open Sales Orders">
+<Table id="salesOrdersTable"
+      items="{
+        path: '/SalesOrders',
+        sorter: [
+          { path: 'CustomerName', group: true },
+          { path: 'OrderDate', descending: true }
+        ]
+      }">
+<columns>
+<Column><Text text="Order Number"/></Column>
+<Column><Text text="Order Date"/></Column>
+<Column><Text text="Customer Name"/></Column>
+<Column hAlign="End"><Text text="Net Value"/></Column>
+</columns>
+<items>
+<ColumnListItem>
+<cells>
+<Text text="{OrderNumber}"/>
+<Text text="{OrderDate}"/>
+<Text text="{CustomerName}"/>
+<ObjectNumber number="{NetValue}"/>
+</cells>
+</ColumnListItem>
+</items>
+</Table>
+</Page>
+</mvc:View>

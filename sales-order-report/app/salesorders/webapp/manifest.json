@@ -1,0 +1,60 @@
+{
+  "_version": "1.28.0",
+  "sap.app": {
+    "id": "sales-order-report.salesorders",
+    "type": "application",
+    "title": "Open Sales Orders",
+    "description": "Freestyle UI5 report for open sales orders",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "dataSources": {
+      "SalesOrderService": {
+        "uri": "/odata/v4/sales-order/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "models": {
+      "": {
+        "dataSource": "SalesOrderService",
+        "preload": false,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sales-order-report.salesorders.view.SalesOrders",
+      "type": "XML",
+      "async": true,
+      "id": "salesOrdersView"
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  }
+}

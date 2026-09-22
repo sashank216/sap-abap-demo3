@@ -1,0 +1,13 @@
+OrderNumber,OrderDate,CustomerName,NetValue
+500001,2026-01-08,Alpine Ski House,18450.00
+500002,2026-01-15,Alpine Ski House,7290.50
+500003,2026-02-03,Blue Ocean Retail,45200.00
+500004,2026-02-18,Blue Ocean Retail,11875.25
+500005,2026-03-02,Cedar Grove Foods,9630.00
+500006,2026-03-11,Cedar Grove Foods,25780.75
+500007,2026-03-19,Delta Office Supplies,6325.40
+500008,2026-04-06,Delta Office Supplies,17490.00
+500009,2026-04-14,Evergreen Manufacturing,58200.00
+500010,2026-04-21,Evergreen Manufacturing,31650.80
+500011,2026-05-05,Alpine Ski House,12890.00
+500012,2026-05-12,Blue Ocean Retail,22340.60

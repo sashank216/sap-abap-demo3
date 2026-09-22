@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Sales Orders</title>
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      #content {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://ui5.sap.com/1.120.30/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_horizon"
+      data-sap-ui-async="true"
+      data-sap-ui-compat-version="edge"
+      data-sap-ui-binding-syntax="complex"
+      data-sap-ui-xx-componentPreload="off"
+      data-sap-ui-resourceroots='{"sales-order-report.salesorders": "./"}'>
+    </script>
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require([
+          "sap/ui/core/mvc/XMLView",
+          "sap/ui/model/odata/v4/ODataModel"
+        ], function (XMLView, ODataModel) {
+          var oModel = new ODataModel({
+            serviceUrl: "/odata/v4/sales-order/",
+            synchronizationMode: "None",
+            operationMode: "Server",
+            autoExpandSelect: true,
+            earlyRequests: true
+          });
+
+          XMLView.create({
+            viewName: "sales-order-report.salesorders.view.SalesOrders"
+          }).then(function (oView) {
+            oView.setModel(oModel);
+            oView.placeAt("content");
+          }).catch(function (oError) {
+            console.error("DIRECT VIEW CREATION ERROR:", oError);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body class="sapUiBody sapUiSizeCompact">
+    <div id="content"></div>
+  </body>
+</html>

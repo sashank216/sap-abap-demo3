@@ -1,0 +1,33 @@
+{
+  "name": "sales-order-report",
+  "version": "1.0.0",
+  "description": "CAP application for an open sales orders report",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^10",
+    "@cap-js/sqlite": "^3.1",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^10"
+  },
+  "scripts": {
+    "start": "cds watch",
+    "watch": "cds watch"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "impl": "@cap-js/sqlite",
+        "credentials": {
+          "database": ":memory:"
+        }
+      }
+    },
+    "folders": {
+      "app": "app"
+    },
+    "server": "srv/server.js"
+  }
+}

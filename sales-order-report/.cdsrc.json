@@ -1,0 +1,8 @@
+{
+  "features": {
+    "fiori_preview": true
+  },
+  "odata": {
+    "version": "v4"
+  }
+}
