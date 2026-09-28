@@ -1,8 +1,13 @@
-using { sales.orders as db } from '../db/schema';
+using { sales } from '../db/schema';
 
-@path: 'sales-order'
-@title: 'Open Sales Orders'
+// Read-only report service: only OPEN orders (Status = 'A') are exposed.
 service SalesOrderService {
   @readonly
-  entity SalesOrders as projection on db.SalesOrders;
+  entity SalesOrders as projection on sales.SalesOrders {
+    key ID,
+    OrderNumber,
+    OrderDate,
+    CustomerName,
+    NetValue
+  } where Status = 'A';
 }

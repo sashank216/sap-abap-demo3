@@ -1,12 +1,11 @@
-namespace sales.orders;
+namespace sales;
 
-/**
- * Open sales orders used by the report.
- * All records in the local sample dataset represent open orders.
- */
+// Status: A = Open, B = Delivered, C = Completed
 entity SalesOrders {
-  key OrderNumber : String(10);
-      OrderDate   : Date;
-      CustomerName: String(100);
-      NetValue    : Decimal(15, 2);
+  key ID       : UUID;
+  OrderNumber  : String(10);
+  OrderDate    : Date;
+  CustomerName : String(100);
+  NetValue     : Decimal(15,2);
+  Status       : String(1);
 }

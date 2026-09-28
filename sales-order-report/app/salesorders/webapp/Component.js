@@ -1,11 +1,6 @@
-sap.ui.define([
-  "sap/ui/core/UIComponent"
-], function (UIComponent) {
+sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
   "use strict";
-
-  return UIComponent.extend("sales-order-report.salesorders.Component", {
-    metadata: {
-      manifest: "json"
-    }
+  return UIComponent.extend("salesorders.Component", {
+    metadata: { manifest: "json" }
   });
 });

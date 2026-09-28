@@ -1,8 +1,7 @@
-sap.ui.define([
-  "sap/ui/core/mvc/Controller"
-], function (Controller) {
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
-  return Controller.extend("sales-order-report.salesorders.controller.SalesOrders", {
+  // Intentionally empty: all data binding is declared in the XML view.
+  return Controller.extend("salesorders.controller.SalesOrders", {
     onInit: function () {}
   });
 });
